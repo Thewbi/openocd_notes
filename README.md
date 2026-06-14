@@ -115,6 +115,23 @@ See `config.log' for more details
 
 
 
+# STLink Protocol
+
+I am trying to understand the protocol that openocd speaks to the STLink over USB.
+Sadly I have not found any official documentation about that protocol yet.
+
+## GetVersion
+
+openocd uses libsub transfers instead of calling bulk-functions!
+It prepares two transfers. The first transfer first contians the ASCII characters ("USBC", 0x55 0x53 0x42 0x43) followed by some other bytes and
+finally followed by 16 bytes for the GET_VERSION command which is started using the code 0xF1 for GetVersion, followed by zeroes to fill up to 16 bytes.
+
+TODO: Next steps
+-- learn how to use transfers with libusb
+-- learn why "USBC" is used before the GetVersion command and what each individual byte means
+
+
+
 
 ## Compiling
 
