@@ -36,7 +36,7 @@ cd /c/Users/lapto/dev/c/openocd
 ./build/src/openocd.exe -d3 -f ./tcl/interface/stlink.cfg -f ./tcl/target/stm8s105.cfg -c "init" -c "reset halt"
 ```
 
-If you made changed, recompile using:
+After making changes, recompile using:
 
 ```
 cd /c/Users/lapto/dev/c/openocd
